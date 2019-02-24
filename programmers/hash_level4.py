@@ -1,23 +1,38 @@
-def solution(clothes):
-    answer = 1
+def solution(genres, plays):
+    answer = []
 
-    cart = {}
+    container = {}
 
-    for i in clothes:
+    for i, (genre, play) in enumerate(zip(genres, plays)):
 
-        if cart.get(i[1]) is None:
-            cart[i[1]] = list()
-            cart[i[1]].append(i[0])
+        if container.get(genre) is None:
+            container[genre] = list()
+            container[genre].append([i, play])
         else:
-            cart[i[1]].append(i[0])
+            container[genre].append([i, play])
 
-    for i in cart:
-        answer *= len(cart[i]) + 1
+    playList = list()
 
-    return answer - 1
+    for group in container:
+        elements = container[group]
+        elements.sort(key=lambda x:x[1], reverse=True)
+        total = sum(play for index, play in elements)
+
+        if len(elements) > 1:
+            elements = elements[:2]
+
+        playList.append([total, elements])
+
+    playList.sort(key=lambda x:x[0], reverse=True)
+
+    for i in range(len(playList)):
+        for j in range(len(playList[i][1])):
+            answer.append(playList[i][1][j][0])
+
+    return answer
 
 
+genres = ["classic", "pop", "classic", "classic", "pop"]
+plays = [500, 600, 150, 800, 2500]
 
-clothes = 	[["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
-
-print(solution(clothes))
+print(solution(genres, plays))
