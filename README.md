@@ -4,4 +4,7 @@
 ## 알고리즘 사이트
 + [backjoon](./backjoon)
 + [codility](./codility)
-+ [programmers](./programmers)
++ [programmers](./programmers) 
+
+## 연습
++ [practice](./practice)
