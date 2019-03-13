@@ -8,3 +8,4 @@
 
 ## 연습
 + [practice](./practice)
++ [test](./test)
