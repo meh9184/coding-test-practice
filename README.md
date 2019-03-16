@@ -1,5 +1,5 @@
 # coding-test-practice
-코딩테스트 연습
+코딩테스트 연습 (Python)
 
 ## 알고리즘 사이트
 + [backjoon](./backjoon)
