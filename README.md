@@ -1,7 +1,7 @@
 # coding-test-practice
 코딩테스트 연습 (Python)
 
-## 타깃 알고리즘 사이트
+## 알고리즘 사이트
 + [backjoon](./backjoon)
 + [codility](./codility)
 + [programmers](./programmers) 
