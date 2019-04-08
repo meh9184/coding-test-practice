@@ -9,6 +9,8 @@
 + [hash_level2](https://programmers.co.kr/learn/courses/30/lessons/42577)
 + [hash_level3](https://programmers.co.kr/learn/courses/30/lessons/42578)
 + [hash_level4](https://programmers.co.kr/learn/courses/30/lessons/42579)
++ [heap_level1](https://programmers.co.kr/learn/courses/30/lessons/42626)
++ [heap_level2](https://programmers.co.kr/learn/courses/30/lessons/42629)
 + [stack_queue_level1](https://programmers.co.kr/learn/courses/30/lessons/42585)
 + [stack_queue_level2](https://programmers.co.kr/learn/courses/30/lessons/42587)
 + [stack_queue_level3](https://programmers.co.kr/learn/courses/30/lessons/42583)
