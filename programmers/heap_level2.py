@@ -2,18 +2,20 @@ import heapq
 
 def solution(stock, dates, supplies, k):
     answer = 0
+    index = 0
     heap = []
 
     for i in range(1, k):
         stock -= 1
 
         if i in dates:
-            index = dates.index(i)
-            heapq.heappush(heap, (-supplies[index], supplies[index]))
+            heapq.heappush(heap, -supplies[index])
+            index += 1
 
         if stock <= 0:
-            stock += heapq.heappop(heap)[1]
+            stock += -heapq.heappop(heap)
             answer += 1
+
 
         print(i)
         print(stock)
