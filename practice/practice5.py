@@ -9,8 +9,4 @@ def solution(n):
 
     return int(str(n) + result)
 
-
-# print(solution(17))
-L = [4, 3, 2, 1]
-for i in range(len(L)):
-    print(L[:-i]) if i is not 0 else print(L)
+print(solution(17))

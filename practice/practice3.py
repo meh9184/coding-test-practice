@@ -9,7 +9,7 @@ def fibo_recursion(n):
         return fibo_recursion(n-2) + fibo_recursion(n-1)
 
 
-def fibo_interation(n):
+def fibo_iteration(n):
     if n <= 1:
         return 0
     elif n == 2:
@@ -26,7 +26,7 @@ def fibo_interation(n):
         return num3
 
 
-n = 50
-print(fibo_interation(n))
+n = 10
+print(fibo_iteration(n))
 print(fibo_recursion(n))
 
