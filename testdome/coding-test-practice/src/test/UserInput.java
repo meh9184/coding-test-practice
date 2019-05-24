@@ -1,3 +1,4 @@
+package test;
 public class UserInput {
     
     public static class TextInput {
