@@ -7,14 +7,14 @@ public class MovieNight {
 
     	List<String> yearMonthDate = new LinkedList<String>();
     	
-    	for(Movie movie : movies) {
-    		String tmp = Integer.toString(movie.getStart().getYear())
-    				+ movie.getStart().getMonth().toString
-    				+ movie.getStart().getDate().toString;
-    		
-    		yearMonthDate.add(tmp);
-        	
-        }
+//    	for(Movie movie : movies) {
+//    		String tmp = Integer.toString(movie.getStart().getYear())
+//    				+ movie.getStart().getMonth().toString
+//    				+ movie.getStart().getDate().toString;
+//    		
+//    		yearMonthDate.add(tmp);
+//        	
+//        }
     	
     	
     	return true;
