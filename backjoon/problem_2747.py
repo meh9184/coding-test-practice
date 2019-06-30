@@ -1,3 +1,3 @@
 import math
 
-# ST Unitas 코딩테스트 연습0
+# ST Unitas 코딩테스트 연습
