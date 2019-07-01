@@ -1,3 +1,3 @@
-import math
+a, b = map(int, input().split())
 
-# ST Unitas 코딩테스트 연습0
+print(a+b)
