@@ -1,35 +1,83 @@
-def solution(s, t):
+def solution(block, board):
+    n = len(board)
+    answer = 0
+    block_points = [
+        [(0, 0), (-1, 0), (-2, 0)],
+        [(0, 0), (0, 1), (0, 2)],
+        [(0, 0), (0, 1), (-1, 0)],
+        [(0, 0), (0, 1), (-1, 1)],
+        [(0, 0), (-1, 0), (-1, -1)],
+        [(0, 0), (-1, 0), (-1, 1)]
+    ]
 
-	if len(s) % len(t) == 0 or len(t) % len(s) == 0:
+    targets = get_targets(board)
 
-		if len(s) >= len(t):
+    deletion_lines = []
+    for target_x, target_y in targets:
 
-			rep = len(s) // len(t)
+        for x, y in block_points[block]:
+            if 0 <= target_x + x <= n-1 and 0 <= target_y + y <= n-1:
+                board[target_x + x][target_y + y] += 1
+        # print_board(board)
+        # print(block_points[block])
+        # print(count_deletion_lines(board))
+        # print()
 
-			for i in range(rep):
+        deletion_lines.append(count_deletion_lines(board))
 
-				if s[len(t) * i:len(t) * (i + 1)] != t:
+        for x, y in block_points[block]:
+            if 0 <= target_x + x <= n - 1 and 0 <= target_y + y <= n - 1:
+                board[target_x + x][target_y + y] -= 1
 
-					answer = False
-					break
+    answer = max(deletion_lines)
 
-				answer = True
-
-		else:
-
-			rep = len(t) // len(s)
-
-			for i in range(rep):
-
-				if t[len(s) * i:len(s) * (i + 1)] != s:
-
-					answer = False
-					break
-
-				answer = True
+    return answer
 
 
-	else:
-		answer = False
+def get_targets(board):
 
-	return answer
+    n = len(board)
+    targets = []
+
+    for x in range(n):
+        for y in range(n):
+            if board[x][y] == 0:
+                targets.append((x, y))
+
+    return targets
+
+
+def count_deletion_lines(A):
+    count = 0
+
+    for i in range(len(A)):
+        if 2 in A[i]:
+            return 0
+        elif A[i].count(1) == len(A):
+            count += 1
+
+    return count
+
+
+def print_board(board):
+    for i in range(len(board)):
+        print(board[i])
+
+
+block = 0
+# board = [
+#     [1,0,0,0],
+#     [1,0,0,1],
+#     [1,1,0,1],
+#     [1,1,0,1]
+# ]
+
+board = [
+    [1,0,0,0,0],
+    [1,0,0,1,0],
+    [1,1,1,1,0],
+    [1,1,1,1,0],
+    [1,1,1,1,1]
+]
+
+print(solution(block, board))
