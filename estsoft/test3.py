@@ -19,6 +19,7 @@ def solution(U, L, C):
             if U < 0 or L < 0:
                 return 'IMPOSSIBLE'
                 
+    for i, c in enumerate(C):
         if c == 1:
             if U > 0:
                 M[0][i] = 1
