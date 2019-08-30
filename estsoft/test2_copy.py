@@ -21,25 +21,23 @@ def solution(T):
 # 트리를 루트노드부터 리프노드까지 내려가며 최장 길이 longest_distinct_path를 계산
 def get_longest_distinct_path(T, distinct_values):
 
+    ### 수정된 부분 ###
     # 만약 노드의 값이 없거나, 중간에 중복된 값이 발생했을 경우 현재 해시 크기를 반환
-    if (T == None) or (2 in distinct_values.values()):
+    if (T == None) or (T.x in distinct_values.keys()):
         return len(distinct_values)
 
     else:
+        ### 수정된 부분 ###
         # 해시에 현재 노드의 값을 삽입
-        if T.x in distinct_values.keys():
-            distinct_values[T.x] += 1
-        else:
-            distinct_values[T.x] = 1
+        distinct_values[T.x] = 1
 
         # 좌우 서브 트리의 longest_distinct_path 값을 계산하여 (분할정복) 큰 값을 반환
         max_path = max(get_longest_distinct_path(T.l, distinct_values), 
                        get_longest_distinct_path(T.r, distinct_values))
 
-        distinct_values[T.x] -= 1
-
-        if distinct_values[T.x] == 0:
-            del distinct_values[T.x]
+        ### 수정된 부분 ###
+        # 해당 노드의 키값을 추가하여 연산이 끝났다면, 해시에서 다시 삭제
+        del distinct_values[T.x]
 
         return max_path; 
 
